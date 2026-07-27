@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Red+Hat+Display:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure default avatar asset is reachable everywhere */
+/* Default avatar is at: public/images/default-avatar.svg and served as /images/default-avatar.svg */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-primary-bg text-text-heading font-sans antialiased;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent-amber text-primary-bg font-semibold px-6 py-3 rounded-xl 
+           transition-all duration-300 hover:scale-105 hover:shadow-glow 
+           active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-border text-text-heading font-medium 
+           px-6 py-3 rounded-xl transition-all duration-300 hover:bg-primary-card 
+           active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-text-subtext font-medium px-4 py-2 rounded-lg 
+           transition-all duration-300 hover:text-text-heading hover:bg-primary-card;
+  }
+
+  .card {
+    @apply bg-primary-card border border-border rounded-2xl p-6 
+           transition-all duration-300 hover:border-accent-amber/30;
+  }
+
+  .input-field {
+    @apply bg-primary-bgSecondary border border-border rounded-xl px-4 py-3 
+           text-text-heading placeholder:text-text-muted focus:outline-none 
+           focus:border-accent-amber transition-all duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-amber to-accent-turquoise bg-clip-text text-transparent;
+  }
+
+  .btn-danger {
+    @apply bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-xl transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
